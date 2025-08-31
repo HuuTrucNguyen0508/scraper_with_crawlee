@@ -1,0 +1,35 @@
+{
+  "name": "novel-crawler",
+  "version": "1.0.0",
+  "description": "A web crawler for scraping novel chapters from novelbin.com",
+  "main": "improved-crawler-refactored.js",
+  "type": "module",
+  "scripts": {
+    "start": "node improved-crawler-refactored.js",
+    "crawl": "node improved-crawler-refactored.js",
+    "dev": "node improved-crawler-refactored.js"
+  },
+  "keywords": [
+    "web-scraping",
+    "crawler",
+    "novels",
+    "novelbin",
+    "crawlee",
+    "playwright"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@mendable/firecrawl-js": "^4.1.0",
+    "commander": "^12.1.0",
+    "crawlee": "^3.14.1",
+    "dotenv": "^17.2.1",
+    "playwright": "^1.48.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "bin": {
+    "novel-crawler": "./improved-crawler-refactored.js"
+  }
+}
