@@ -1,0 +1,16 @@
+services:
+  nextjs-backend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./markdown.db:/app/markdown.db
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
