@@ -38,6 +38,7 @@ async function startInteractiveCrawling() {
     console.log(`⏱️  Delay between requests: ${settings.delay}ms`);
     console.log(`⏰ Page timeout: ${settings.pageTimeout}ms`);
     console.log(`🔄 Retry attempts: ${settings.retryAttempts}`);
+    console.log(`⚡ Max concurrent requests: ${settings.maxConcurrency}`);
     console.log(`🔥 Firecrawl fallback: ${settings.useFirecrawl ? 'Enabled' : 'Disabled'}`);
     console.log('');
     

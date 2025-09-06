@@ -128,6 +128,23 @@ export async function getAdvancedSettings() {
   let retryAttempts = await askQuestion('Enter retry attempts (default: 3): ');
   retryAttempts = parseInt(retryAttempts) || 3;
   
+  // Parallel processing settings
+  console.log('\n⚡ Parallel Processing:');
+  console.log('   - Process multiple chapters simultaneously for faster scraping');
+  console.log('   - Higher concurrency = faster but more likely to get blocked');
+  console.log('   - Lower concurrency = slower but more stable\n');
+  console.log('Recommended settings:');
+  console.log('   - 1-2 concurrent requests - Conservative (recommended for testing)');
+  console.log('   - 3-5 concurrent requests - Balanced (recommended)');
+  console.log('   - 6+ concurrent requests - Aggressive (may get blocked)\n');
+  
+  let maxConcurrency = await askQuestion('Enter max concurrent requests (default: 3): ');
+  maxConcurrency = parseInt(maxConcurrency) || 3;
+  
+  // Ensure reasonable limits
+  if (maxConcurrency < 1) maxConcurrency = 1;
+  if (maxConcurrency > 10) maxConcurrency = 10;
+  
   // Firecrawl fallback option
   if (isFirecrawlAvailable()) {
     console.log('\n🔥 Firecrawl Fallback:');
@@ -137,10 +154,10 @@ export async function getAdvancedSettings() {
     const useFirecrawlChoice = await askQuestion('Enable Firecrawl fallback? (y/n, default: y): ');
     const useFirecrawl = useFirecrawlChoice.toLowerCase() !== 'n';
     
-    return { headless, delay, pageTimeout, retryAttempts, useFirecrawl };
+    return { headless, delay, pageTimeout, retryAttempts, maxConcurrency, useFirecrawl };
   }
   
-  return { headless, delay, pageTimeout, retryAttempts, useFirecrawl: false };
+  return { headless, delay, pageTimeout, retryAttempts, maxConcurrency, useFirecrawl: false };
 }
 
 // Function to show scraping progress

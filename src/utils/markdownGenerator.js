@@ -14,9 +14,18 @@ export function createMarkdownContent(chapters, novelTitle = '') {
   markdown += `**Scraped:** ${new Date().toISOString()}\n\n`;
   markdown += `---\n\n`;
   
-  chapters.forEach((chapter, index) => {
-    markdown += `## Chapter ${index + 1}\n\n`;
-    markdown += `**Title:** ${chapter.title}\n\n`;
+  // Sort chapters by actual chapter number to ensure proper order
+  const sortedChapters = chapters.sort((a, b) => {
+    const aNum = a.actualChapterNumber || a.chapterNumber || 0;
+    const bNum = b.actualChapterNumber || b.chapterNumber || 0;
+    return aNum - bNum;
+  });
+  
+  sortedChapters.forEach((chapter, index) => {
+    const chapterNumber = chapter.actualChapterNumber || chapter.chapterNumber || (index + 1);
+    const chapterTitle = chapter.title || `Chapter ${chapterNumber}`;
+    
+    markdown += `## ${chapterTitle}\n\n`;
     markdown += `**URL:** ${chapter.url}\n\n`;
     
     if (chapter.content && chapter.content.trim()) {

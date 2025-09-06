@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "novelTitle": "Monster Paradise",
+    "novelName": "Monster Paradise",
+    "startChapter": 1,
+    "endChapter": 50,
+    "totalChapters": 50,
+    "scrapedAt": "2025-09-06T15:11:10.053Z",
+    "settings": {
+      "delay": 5000,
+      "maxConcurrency": 3,
+      "retryAttempts": 3,
+      "pageTimeout": 30000
+    }
+  },
+  "failedChapters": [
+    {
+      "chapterNumber": 4,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1170",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    },
+    {
+      "chapterNumber": 12,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1178",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    },
+    {
+      "chapterNumber": 20,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1186",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    },
+    {
+      "chapterNumber": 34,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1200",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    },
+    {
+      "chapterNumber": 43,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1209",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    },
+    {
+      "chapterNumber": 48,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1214",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    },
+    {
+      "chapterNumber": 50,
+      "url": "https://novelbin.com/b/monster-paradise/chapter-1216",
+      "error": "Request failed after retries",
+      "retryCount": 1
+    }
+  ]
+}
